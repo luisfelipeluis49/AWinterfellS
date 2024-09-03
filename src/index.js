@@ -31,7 +31,7 @@ server.get( '/', async ( req, res ) =>
 
                 if ( invoice.status === 'credited' )
                 {
-                    await operations.transfer( invoice.amount );
+                    await operations.transfer( parseInt( invoice.amount ) );
                 }
             }
 
@@ -89,3 +89,6 @@ server.listen(
         scheduleInvoices();
     }
 );
+
+
+export default server;
