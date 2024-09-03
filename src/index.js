@@ -14,6 +14,7 @@ const port = 3000;
 
 server.get( '/', async ( req, res ) =>
     {
+        console.log( 'GET /' );
         try
         {
             const event = await starkbank.event.parse(
@@ -23,16 +24,9 @@ server.get( '/', async ( req, res ) =>
                 }
             );
 
-            if ( event.subscription === 'invoice' )
+            if ( event.subscription === 'invoice' && event.type === 'credited' )
             {
-                const invoice = event.log.invoice;
-
-                console.log( invoice );
-
-                if ( invoice.status === 'credited' )
-                {
-                    await operations.transfer( parseInt( invoice.amount ) );
-                }
+                await operations.transfer( parseInt( invoice.amount ) );
             }
 
             res.end();

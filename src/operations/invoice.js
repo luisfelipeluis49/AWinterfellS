@@ -77,9 +77,4 @@ export const invoices = async() =>
     const result = await starkbank.invoice.create(
         generateInvoices()
     );
-
-    for( let invoice of result )
-    {
-        console.log( invoice );
-    }
 };
