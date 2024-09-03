@@ -25,7 +25,7 @@ server.get( '/', async ( req, res ) =>
 
             if ( event.subscription === 'invoice' && event.type === 'credited' )
             {
-                await operations.transfer( parseInt( invoice.amount ) );
+                await operations.transfer( parseInt( event.log.invoice.amount ) );
             }
         }
         catch( error )
