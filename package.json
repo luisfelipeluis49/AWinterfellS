@@ -1,0 +1,40 @@
+{
+  "name": "winterfell",
+  "version": "1.0.0",
+  "description": "Backend skilltest for Stark Bank",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "TODO",
+    "lint": "TODO",
+    "keygen": "node src/enviroment/keygen.js",
+    "webhook": "node src/enviroment/webhook.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisfelipeluis49/winterfell.git"
+  },
+  "keywords": [
+    "Stark",
+    "Bank",
+    "Skilltest",
+    "NodeJS",
+    "SDK",
+    "API"
+  ],
+  "author": "Luís Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisfelipeluis49/winterfell/issues"
+  },
+  "homepage": "https://github.com/luisfelipeluis49/winterfell#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "starkbank": "^2.29.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
