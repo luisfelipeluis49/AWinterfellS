@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "node --test src/test.js",
+    "test": "node --test test/test.js",
     "lint": "eslint .",
     "keygen": "node src/enviroment/keygen.js",
     "webhook": "node src/enviroment/webhook.js"
@@ -32,6 +32,7 @@
   "homepage": "https://github.com/luisfelipeluis49/winterfell#readme",
   "dependencies": {
     "express": "^4.19.2",
+    "sinon": "^18.0.0",
     "starkbank": "^2.29.1",
     "supertest": "^7.0.0"
   },

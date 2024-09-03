@@ -14,7 +14,6 @@ const port = 3000;
 
 server.get( '/', async ( req, res ) =>
     {
-        console.log( 'GET /' );
         try
         {
             const event = await starkbank.event.parse(
@@ -28,14 +27,14 @@ server.get( '/', async ( req, res ) =>
             {
                 await operations.transfer( parseInt( invoice.amount ) );
             }
-
-            res.end();
         }
         catch( error )
         {
             console.error( error );
             res.status( 400 ).end();
         }
+
+        res.status( 200 ).end();
     }
 );
 
